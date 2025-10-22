@@ -15,7 +15,7 @@ Créer un **thermostat multi-états** en MicroPython :
 | Module | Port Grove | Broche Pico | Rôle |
 |---|---|---|---|
 | Potentiomètre | A0 | GP26/ADC0 | Température de consigne |
-| DHT11 | D18 | GP18 | Capteur température |
+| DHT20 | D18 | GP18 | Capteur température |
 | LED | D16 | GP16 | Indicateur visuel |
 | Buzzer | D20 | GP20 (PWM) | Alarme sonore |
 | LCD 16×2 I²C | I2C1 | SDA/SCL | Affichage données |
