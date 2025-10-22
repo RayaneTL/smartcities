@@ -1,27 +1,28 @@
-# GPIO
+# Exercice 1 — LED clignotante avec bouton poussoir
 
-## Description
-Expliquez en 2‑3 phrases ce que contient ce dossier.
+### 🎯 Objectif
+Faire clignoter une LED à différentes vitesses selon le nombre d’appuis sur un bouton poussoir.
 
-## Matériel
-- Raspberry Pi Pico W
-- - LED + résistance
-- Bouton-poussoir
+### ⚙️ Matériel
+- Raspberry Pi Pico W  
+- Grove Shield for Pico  
+- Grove LED Pack (D18)  
+- Grove Button (D16)
 
-## Câblage
-- Ajoutez un schéma ou une photo.
-- Référez‑vous au brochage du Pico W (voir README racine).
+### 🔌 Câblage
+| Élément | Port Grove | Broche Pico |
+|----------|-------------|--------------|
+| LED | D18 | GP18 |
+| Bouton | D16 | GP16 |
 
-## Code
-- Déposez ici vos fichiers `.py`
-- Donnez un court mode d’emploi : comment lancer, quelles broches modifier, etc.
+### 🧠 Fonctionnement
+| Appui | Action |
+|--------|--------|
+| 1er | Clignotement lent (0,5 Hz) |
+| 2e | Clignotement rapide |
+| 3e | LED éteinte |
 
-## Tests
-- Procédure de test pas‑à‑pas.
-- Captures d’écran / photos du montage et de la sortie.
 
-## Notes / Problèmes connus
-- Listez les points d’attention (pull‑up/down, I2C addr, niveaux logiques…)
+ 
 
-## Ressources
-- Liens vers datasheets et docs utiles.
+
