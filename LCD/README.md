@@ -21,7 +21,7 @@ Créer un **thermostat multi-états** en MicroPython :
 | LCD 16×2 I²C | I2C1 | SDA/SCL | Affichage données |
 
 ## ▶️ Utilisation
-1. Copier `main.py`, `lcd1602.py` et `dht11.py` sur le Pico (VS Code → MicroPico → Upload Project to Pico).  
+1. Copier `Exercice3.py`, `lcd1602.py` et `dht20.py` sur le Pico (VS Code → MicroPico → Upload Project to Pico).  
 2. Brancher les modules selon le tableau.  
 3. Lancer le script → le LCD affiche la consigne et la température.  
 4. Tourner le **potentiomètre** pour modifier la consigne.  
