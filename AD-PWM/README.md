@@ -1,27 +1,27 @@
-# AD‑PWM (ADC & PWM)
+# Exercice 2 — Volume d’une mélodie (potentiomètre)
 
-## Description
-Expliquez en 2‑3 phrases ce que contient ce dossier.
+## 🎯 Objectif
+Créer un programme MicroPython qui joue une **mélodie en boucle**, dont le **volume** est contrôlé en temps réel par un **potentiomètre**. *(Bonus : bouton pour changer de mélodie, LED qui clignote au rythme).*  
+> D’après l’énoncé “EXERCICE 2 : VOLUME D’UNE MÉLODIE”. 
 
-## Matériel
-- Raspberry Pi Pico W
-- - Potentiomètre (ADC)
-- LED / Buzzer / Servo (PWM)
+## ⚙️ Matériel
+- Raspberry Pi Pico / Pico W  
+- Grove Shield for Pico (recommandé)  
+- Potentiomètre (Grove Rotary)  
+- Buzzer **passif** (PWM)  
+- *(Bonus)* Bouton poussoir, LED + résistance (si hors Grove)
 
-## Câblage
-- Ajoutez un schéma ou une photo.
-- Référez‑vous au brochage du Pico W (voir README racine).
+## 🔌 Câblage (Grove)
+| Élément | Port | Broche Pico |
+|---|---|---|
+| Potentiomètre | **A0** | GP26/ADC0 |
+| Buzzer passif | **D20** | GP20 (PWM) |
+| Bouton (bonus) | **D16** | GP16 |
+| LED (bonus) | **D18** | GP18 |
 
-## Code
-- Déposez ici vos fichiers `.py`
-- Donnez un court mode d’emploi : comment lancer, quelles broches modifier, etc.
-
-## Tests
-- Procédure de test pas‑à‑pas.
-- Captures d’écran / photos du montage et de la sortie.
-
-## Notes / Problèmes connus
-- Listez les points d’attention (pull‑up/down, I2C addr, niveaux logiques…)
-
-## Ressources
-- Liens vers datasheets et docs utiles.
+## ▶️ Utilisation
+1. Envoyer `Exercice2.py` sur le Pico .  
+2. Le programme joue la mélodie en boucle.  
+3. Tourner le **potentiomètre** → le **volume** change **instantanément**.  
+4. *(Bonus)* Appuyer sur le **bouton (D16)** pour changer de mélodie.  
+5. *(Bonus)* La **LED (D18)** clignote sur le tempo.
