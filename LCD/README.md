@@ -3,7 +3,7 @@
 ## 🎯 Objectif
 Créer un **thermostat multi-états** en MicroPython :
 - Réglage de la **température de consigne** avec un potentiomètre (15–35 °C)
-- Lecture de la **température ambiante** (DHT11)
+- Lecture de la **température ambiante** (DHT20)
 - Affichage sur **LCD 16×2** :
   - Ligne 1 : `Set: xx.xC`
   - Ligne 2 : `Ambient: yy.yC`
