@@ -3,7 +3,7 @@
 ## 🎯 Objectif
 Créer un **thermostat multi-états** en MicroPython :
 - Réglage de la **température de consigne** avec un potentiomètre (15–35 °C)
-- Lecture de la **température ambiante** (DHT20)
+- Lecture de la **température ambiante** (DHT11)
 - Affichage sur **LCD 16×2** :
   - Ligne 1 : `Set: xx.xC`
   - Ligne 2 : `Ambient: yy.yC`
@@ -15,13 +15,13 @@ Créer un **thermostat multi-états** en MicroPython :
 | Module | Port Grove | Broche Pico | Rôle |
 |---|---|---|---|
 | Potentiomètre | A0 | GP26/ADC0 | Température de consigne |
-| DHT20 | D18 | GP18 | Capteur température |
+| DHT11 | D18 | GP18 | Capteur température |
 | LED | D16 | GP16 | Indicateur visuel |
 | Buzzer | D20 | GP20 (PWM) | Alarme sonore |
 | LCD 16×2 I²C | I2C1 | SDA/SCL | Affichage données |
 
 ## ▶️ Utilisation
-1. Copier `Exercice3.py`, `lcd1602.py` et `dht20.py` sur le Pico (VS Code → MicroPico → Upload Project to Pico).  
+1. Copier `Exercice3.py`, `lcd1602.py` et `dht11.py` sur le Pico (VS Code → MicroPico → Upload Project to Pico).  
 2. Brancher les modules selon le tableau.  
 3. Lancer le script → le LCD affiche la consigne et la température.  
 4. Tourner le **potentiomètre** pour modifier la consigne.  
@@ -39,7 +39,7 @@ Créer un **thermostat multi-états** en MicroPython :
 
 ## 📁 Fichiers
 - `Exercice3.py` — programme principal  
-- `lcd1602.py`, `dht20.py` — librairies  
+- `lcd1602.py`, `dht11.py` — librairies  
 - `photo_montage.png` — schéma ou photo du montage  
 
 ## ✅ Résultat attendu
