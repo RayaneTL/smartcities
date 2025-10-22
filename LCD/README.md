@@ -1,27 +1,47 @@
-# LCD (I2C)
+# Exercice 3 — Système de contrôle de température
 
-## Description
-Expliquez en 2‑3 phrases ce que contient ce dossier.
+## 🎯 Objectif
+Créer un **thermostat multi-états** en MicroPython :
+- Réglage de la **température de consigne** avec un potentiomètre (15–35 °C)
+- Lecture de la **température ambiante** (DHT11)
+- Affichage sur **LCD 16×2** :
+  - Ligne 1 : `Set: xx.xC`
+  - Ligne 2 : `Ambient: yy.yC`
+- Contrôle :
+  - Si `Ambient > Set` → LED clignote lentement (0,5 Hz)
+  - Si `Ambient > Set + 3` → LED rapide + **buzzer ON** + mot **ALARM** sur le LCD
 
-## Matériel
-- Raspberry Pi Pico W
-- - Écran LCD I2C (adresse souvent 0x27 ou 0x3F)
-- Câblage SDA/SCL
+## ⚙️ Matériel
+| Module | Port Grove | Broche Pico | Rôle |
+|---|---|---|---|
+| Potentiomètre | A0 | GP26/ADC0 | Température de consigne |
+| DHT11 | D18 | GP18 | Capteur température |
+| LED | D16 | GP16 | Indicateur visuel |
+| Buzzer | D20 | GP20 (PWM) | Alarme sonore |
+| LCD 16×2 I²C | I2C1 | SDA/SCL | Affichage données |
 
-## Câblage
-- Ajoutez un schéma ou une photo.
-- Référez‑vous au brochage du Pico W (voir README racine).
+## ▶️ Utilisation
+1. Copier `main.py`, `lcd1602.py` et `dht11.py` sur le Pico (VS Code → MicroPico → Upload Project to Pico).  
+2. Brancher les modules selon le tableau.  
+3. Lancer le script → le LCD affiche la consigne et la température.  
+4. Tourner le **potentiomètre** pour modifier la consigne.  
+5. Chauffer ou refroidir le capteur pour observer les changements d’état.
 
-## Code
-- Déposez ici vos fichiers `.py`
-- Donnez un court mode d’emploi : comment lancer, quelles broches modifier, etc.
+## 🧠 Détails techniques
+- Lecture **non-bloquante** (LED et buzzer fonctionnent pendant les mesures).  
+- Mapping ADC → température via règle de trois (15→35 °C).  
+- **PWM** du buzzer contrôlé via `duty_u16()` (2000 Hz).  
+- LCD rafraîchi toutes les ~1 s.  
 
-## Tests
-- Procédure de test pas‑à‑pas.
-- Captures d’écran / photos du montage et de la sortie.
+## 🧪 Bonus possibles
+- Effet **dimmer** : LED s’allume progressivement au lieu de clignoter.  
+- **ALARM** clignotant ou défilant sur le LCD.  
 
-## Notes / Problèmes connus
-- Listez les points d’attention (pull‑up/down, I2C addr, niveaux logiques…)
+## 📁 Fichiers
+- `Exercice3.py` — programme principal  
+- `lcd1602.py`, `dht11.py` — librairies  
+- `photo_montage.png` — schéma ou photo du montage  
 
-## Ressources
-- Liens vers datasheets et docs utiles.
+## ✅ Résultat attendu
+Le LCD affiche la température de consigne et celle mesurée ;  
+la LED et le buzzer réagissent automatiquement selon l’écart entre les deux.
