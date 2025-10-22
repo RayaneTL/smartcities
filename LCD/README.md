@@ -39,7 +39,7 @@ Créer un **thermostat multi-états** en MicroPython :
 
 ## 📁 Fichiers
 - `Exercice3.py` — programme principal  
-- `lcd1602.py`, `dht11.py` — librairies  
+- `lcd1602.py`, `dht20.py` — librairies  
 - `photo_montage.png` — schéma ou photo du montage  
 
 ## ✅ Résultat attendu
